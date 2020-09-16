@@ -1,0 +1,28 @@
+import { useContext } from 'react'
+import { ContextApp } from '../../pages/posts/[pid]'
+import BlogService from '../../services'
+
+const Comments = () => {
+    const pid = useContext(ContextApp),
+        service = new BlogService(),
+        comments = service.useGetComments(pid)
+
+    if (!comments) {
+        return <></>
+    }
+
+    if (comments === 'error') {
+        return (
+            <h2 className="post__title">Error</h2>
+        )
+    }
+
+    return (
+        <>
+            <h2 className="comments__title">Comments:</h2>
+            {comments}
+        </>
+    )
+}
+
+export default Comments
