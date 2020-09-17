@@ -1,9 +1,13 @@
 import { useRouter } from 'next/router';
-import Post from '../../components/post/';
-import Author from '../../components/author/';
-import Comments from '../../components/comments/';
+import Post from '../../components/post';
+import Author from '../../components/author';
+import Comments from '../../components/comments';
+
+/* eslint-disable */
 
 export const ContextApp = React.createContext();
+
+/* eslint-enable */
 
 const PostWrapper = () => {
 	const router = useRouter();

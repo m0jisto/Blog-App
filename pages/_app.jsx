@@ -3,6 +3,9 @@ import Link from 'next/link';
 
 import '../styles/global.sass';
 
+/* eslint-disable */
+//Требует валидации пропсов
+
 function MyApp({ Component, pageProps }) {
 	return (
 		<>

@@ -1,6 +1,6 @@
-import { useContext } from 'react'
-import { ContextApp } from '../../pages/posts/[pid]'
-import BlogService from '../../services'
+import { useContext } from 'react';
+import { ContextApp } from '../../pages/posts/[pid]';
+import BlogService from '../../services';
 
 const Author = () => {
 	const pid = useContext(ContextApp);
@@ -23,15 +23,15 @@ const Author = () => {
 		<article className="post">
 			<h2 className="post__title">{name}</h2>
 			<div className="post__body">
-				E-mail:
+				E-mail:&nbsp;
 				<a href={`mailto:${email}`}>{email}</a>
 			</div>
 			<div className="post__body">
-				Phone:
+				Phone:&nbsp;
 				<a href={`tel:+${phone}`}>{phone}</a>
 			</div>
 			<div className="post__body">
-				Website:
+				Website:&nbsp;
 				<a href={`http://${website}`}>{website}</a>
 			</div>
 			<hr />
