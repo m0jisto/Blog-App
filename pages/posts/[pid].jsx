@@ -1,14 +1,13 @@
 import { useRouter } from 'next/router';
-
-import Post from '../../components/post/'
-import Author from '../../components/author/'
-import Comments from '../../components/comments/'
+import Post from '../../components/post/';
+import Author from '../../components/author/';
+import Comments from '../../components/comments/';
 
 export const ContextApp = React.createContext();
 
 const PostWrapper = () => {
-	const router = useRouter(),
-		{ pid } = router.query;
+	const router = useRouter();
+	const { pid } = router.query;
 
 	return (
 		<ContextApp.Provider value={pid}>

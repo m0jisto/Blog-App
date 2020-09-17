@@ -1,2 +1,2 @@
-import About from './about.jsx' 
+import About from './about' 
 export default About
