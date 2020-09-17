@@ -1,6 +1,6 @@
-import { useContext } from 'react'
-import { ContextApp } from '../../pages/posts/[pid]'
-import BlogService from '../../services'
+import { useContext } from 'react';
+import { ContextApp } from '../../pages/posts/[pid]';
+import BlogService from '../../services';
 
 const Comments = () => {
     const pid = useContext(ContextApp),
@@ -11,7 +11,7 @@ const Comments = () => {
         return <></>
     }
 
-    if (comments === 'error') {
+    if (comments === 'error' || comments.length === 0) {
         return (
             <h2 className="post__title">Error</h2>
         )

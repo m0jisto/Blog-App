@@ -1,19 +1,21 @@
-import { useState } from 'react'
-import BlogService from '../services/'
+import { useState } from 'react';
+import BlogService from '../services';
 
 export default function Home() {
-	const [min, updateMin] = useState(0),
-		[max, updtaemax] = useState(9),
-		service = new BlogService(),
-		posts = service.useGetPosts(min, max)
+	const [min, updateMin] = useState(0);
+	const [max, updtaemax] = useState(9);
+	const service = new BlogService();
+	const posts = service.useGetPosts(min, max);
 
 	if (!posts) {
 		return <></>
 	}
 
-	if (posts === 'error') {
+	if (posts === 'error' || posts.length === 0) {
 		return (
-			<h2 className="post__title">Error</h2>
+			<>
+				<h2 className="post__title">Error</h2>
+			</>
 		)
 	}
 
@@ -28,7 +30,7 @@ export default function Home() {
 
 		let start = document.documentElement.scrollHeight
 
-		let timer = setInterval(function () {
+		const timer = setInterval(() => {
 			start -= 20
 
 			if (start <= 0) {
@@ -43,9 +45,7 @@ export default function Home() {
 	return (
 		<>
 			{posts}
-			<button
-				onClick={onClickBtn}
-				className="post__btn post__btn-more">More Posts</button>
+			<button onClick={onClickBtn} className="post__btn post__btn-more" type="button">More Posts</button>
 		</>
 	)
 }

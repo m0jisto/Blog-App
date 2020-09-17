@@ -1,7 +1,7 @@
-import Head from 'next/head'
-import Link from 'next/link'
+import Head from 'next/head';
+import Link from 'next/link';
 
-import '../styles/global.sass'
+import '../styles/global.sass';
 
 function MyApp({ Component, pageProps }) {
 	return (
@@ -44,4 +44,4 @@ function MyApp({ Component, pageProps }) {
 	)
 }
 
-export default MyApp
+export default MyApp;
