@@ -5,13 +5,9 @@ import BlogService from '../../services';
 const Comments = () => {
 	const pid = useContext(ContextApp);
 	const service = new BlogService();
-	const comments = service.useGetComments(pid)
+	const comments = service.useGetComments(pid);
 
-	if (!comments) {
-		return <></>
-	}
-
-	if (comments === 'error' || comments.length === 0) {
+	if (comments === 'error') {
 		return (
 			<h2 className="post__title">Error</h2>
 		)
@@ -25,4 +21,4 @@ const Comments = () => {
 	)
 }
 
-export default Comments
+export default Comments;

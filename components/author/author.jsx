@@ -17,7 +17,7 @@ const Author = () => {
 		)
 	}
 
-	const { name, email, website, phone } = author
+	const { name, email, website, phone } = author;
 
 	return (
 		<article className="post">
@@ -39,4 +39,4 @@ const Author = () => {
 	)
 }
 
-export default Author
+export default Author;

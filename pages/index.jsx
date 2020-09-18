@@ -24,21 +24,21 @@ export default function Home() {
 			updateMin(min + 10);
 			updtaemax(max + 10);
 		} else {
-			updateMin(0)
-			updtaemax(9)
+			updateMin(0);
+			updtaemax(9);
 		}
 
-		let start = document.documentElement.scrollHeight
+		let start = document.documentElement.scrollHeight;
 
 		const timer = setInterval(() => {
-			start -= 20
+			start -= 20;
 
 			if (start <= 0) {
 				clearInterval(timer);
 				return;
 			}
 
-			window.scrollTo(0, start)
+			window.scrollTo(0, start);
 		}, 5);
 	}
 

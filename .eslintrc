@@ -34,7 +34,7 @@
   },
   "plugins": ["react", "react-hooks"],
   "rules": {
-    "import/no-cycle": [2, { "maxDepth": 1 }],
+    "import/no-cycle": [2, { "ignoreExternal": true }],
     "react/jsx-indent": [2, "tab"],
     "react/react-in-jsx-scope": "off",
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],

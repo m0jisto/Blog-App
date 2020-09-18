@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
-import Post from '../../components/post';
-import Author from '../../components/author';
-import Comments from '../../components/comments';
+import Post from '../../components/post/Post';
+import Author from '../../components/author/Author';
+import Comments from '../../components/comments/Comments';
 
 /* eslint-disable */
 
@@ -22,4 +22,4 @@ const PostWrapper = () => {
 	)
 }
 
-export default PostWrapper
+export default PostWrapper;
