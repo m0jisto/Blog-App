@@ -1,7 +1,9 @@
 import Link from 'next/link';
 
+const urlBase = 'https://jsonplaceholder.typicode.com'
+
 export const getResource = async (url) => {
-    const res = await fetch(`https://jsonplaceholder.typicode.com${url}`);
+    const res = await fetch(`${urlBase}${url}`);
 
     if (!res.ok) {
         throw new Error(`Could not fetch ${url}, received ${res.status}`);

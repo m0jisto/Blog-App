@@ -1,6 +1,6 @@
 import { useContext } from 'react';
-import { ContextApp } from '../../pages/posts/[pid]';
-import BlogService from '../../services';
+import { ContextApp } from '../pages/posts/[pid]';
+import BlogService from '../services/BlogService';
 
 const Post = () => {
 	const pid = useContext(ContextApp);
@@ -18,7 +18,7 @@ const Post = () => {
 	}
 
 	const { id, title, body } = post;
-
+	
 	return (
 		<article className="post" key={id}>
 			<h2 className="post__title tac">{`${title[0].toUpperCase()}${title.slice(1)}`}</h2>

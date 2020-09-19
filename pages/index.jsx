@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import BlogService from '../services';
+import BlogService from '../services/BlogService';
 
 export default function Home() {
 	const [min, updateMin] = useState(0);
@@ -7,11 +7,7 @@ export default function Home() {
 	const service = new BlogService();
 	const posts = service.useGetPosts(min, max);
 
-	if (!posts) {
-		return <></>
-	}
-
-	if (posts === 'error' || posts.length === 0) {
+	if (posts === 'error') {
 		return (
 			<>
 				<h2 className="post__title">Error</h2>
@@ -27,17 +23,13 @@ export default function Home() {
 			updateMin(0);
 			updtaemax(9);
 		}
-
 		let start = document.documentElement.scrollHeight;
-
 		const timer = setInterval(() => {
 			start -= 20;
-
 			if (start <= 0) {
 				clearInterval(timer);
 				return;
 			}
-
 			window.scrollTo(0, start);
 		}, 5);
 	}

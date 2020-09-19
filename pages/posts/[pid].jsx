@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
-import Post from '../../components/post/Post';
-import Author from '../../components/author/Author';
-import Comments from '../../components/comments/Comments';
+import Post from '../../components/Post';
+import Author from '../../components/Author';
+import Comments from '../../components/Comments';
 
 /* eslint-disable */
 

@@ -1,6 +1,6 @@
 import { useContext } from 'react';
-import { ContextApp } from '../../pages/posts/[pid]';
-import BlogService from '../../services';
+import { ContextApp } from '../pages/posts/[pid]';
+import BlogService from '../services/BlogService';
 
 const Author = () => {
 	const pid = useContext(ContextApp);
