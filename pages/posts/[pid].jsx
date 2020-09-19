@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import Spinner from '../../components/Spinner'
+import Spinner from '../../components/Spinner';
 import BlogService from '../../services/BlogService';
 
 const PostWrapper = () => {
