@@ -13,11 +13,8 @@ export default function Home() {
 	}
 
 	if (posts === 'error') {
-		return (
-			<>
-				<h2 className="post__title">Error</h2>
-			</>
-		)
+		return <h2 className="post__title">Error</h2>
+	
 	}
 
 	const onClickBtn = () => {
