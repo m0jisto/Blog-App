@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { getResource, transformPosts, transformAuthor, transformPost, transformComments} from './utils'
+import { getResource, transformPosts, transformAuthor, transformPost, transformComments} from './utils';
 
 export default class BlogService {
 
