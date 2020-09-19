@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Spinner from '../components/Spinner';
 import BlogService from '../services/BlogService';
 
 export default function Home() {
@@ -6,6 +7,10 @@ export default function Home() {
 	const [max, updtaemax] = useState(9);
 	const service = new BlogService();
 	const posts = service.useGetPosts(min, max);
+
+	if (!posts) {
+		return <Spinner />
+	}
 
 	if (posts === 'error') {
 		return (

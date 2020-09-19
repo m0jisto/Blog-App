@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { getResource, transformPosts, transformComments} from './utils'
+import { getResource, transformPosts, transformAuthor, transformPost, transformComments} from './utils'
 
 export default class BlogService {
 
@@ -22,7 +22,7 @@ export default class BlogService {
 		useEffect(() => {
 			if (id) {
 				getResource(`/posts/${id}`)
-					.then(data => updatePost(data))
+					.then(data => updatePost(transformPost(data)))
 					.catch(() => updatePost('error'))
 			}
 
@@ -39,7 +39,7 @@ export default class BlogService {
 				getResource(`/posts/${id}`)
 					.then(data => {
 						getResource(`/users/${data.userId}`)
-							.then(item => updateAuthor(item))
+							.then(item => updateAuthor(transformAuthor(item)))
 							.catch(() => updateAuthor('error'))
 					})
 					.catch(() => updateAuthor('error'))
