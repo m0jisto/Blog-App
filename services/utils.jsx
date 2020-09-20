@@ -1,10 +1,7 @@
 import Link from 'next/link';
+import urlBase from './constants';
 
-const urlBase = 'https://jsonplaceholder.typicode.com'
-
-function firstLettersUp (str) {
-	return `${str[0].toUpperCase()}${str.slice(1)}`
-}
+const firstLetterUp = (str) => `${str[0].toUpperCase()}${str.slice(1)}`;
 
 export const getResource = async (url) => {
 	const res = await fetch(`${urlBase}${url}`);
@@ -23,9 +20,9 @@ export const transformPosts = (item) => {
 
 			return (
 				<article className="post" key={id}>
-					<h2 className="post__title">{`${firstLettersUp(title)}`}</h2>
+					<h2 className="post__title">{`${firstLetterUp(title)}`}</h2>
 					<div className="post__info">MARCH 2, 2016 | TRAVEL</div>
-					<div className="post__body">{`${firstLettersUp(body)}`}</div>
+					<div className="post__body">{`${firstLetterUp(body)}`}</div>
 					<Link href={`/posts/${id}`}>
 						<button className="post__btn" type="button">Continue reading</button>
 					</Link>
@@ -71,9 +68,9 @@ export const transformPost = (item) => {
 
 		return (
 			<article className="post" key={id}>
-				<h2 className="post__title tac">{`${firstLettersUp(title)}`}</h2>
+				<h2 className="post__title tac">{`${firstLetterUp(title)}`}</h2>
 				<div className="post__info tac">MARCH 2, 2016 | TRAVEL</div>
-				<div className="post__body tac">{`${firstLettersUp(body)}`}</div>
+				<div className="post__body tac">{`${firstLetterUp(body)}`}</div>
 				<hr />
 			</article>
 		)
@@ -89,8 +86,8 @@ export const transformComments = (item) => {
 
 			return (
 				<article className="comments" key={id}>
-					<h2 className="comments__subtitle">{`${firstLettersUp(name)}`}</h2>
-					<div className="comments__body">{`${firstLettersUp(body)}`}</div>
+					<h2 className="comments__subtitle">{`${firstLetterUp(name)}`}</h2>
+					<div className="comments__body">{`${firstLetterUp(body)}`}</div>
 				</article>
 			)
 		})

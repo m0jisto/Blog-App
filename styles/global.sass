@@ -134,12 +134,30 @@ a
 .tac 
     text-align: center
 
-.spinner 
+.spinner, .error
     height: 100%
     width: 100%
     display: flex
+    flex-direction: column
     justify-content: center
     align-items: center
+
+.error
+    &__round
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 75px
+        height: 75px
+        border: 2px solid red
+        border-radius: 100%
+        color: red
+        font-size: 40px
+    &__title
+        margin-top: 20px
+        color: red
+        font-size: 30px
+
 
 @keyframes ldio-qrljoi1qla 
     0% 

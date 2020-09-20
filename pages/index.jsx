@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Spinner from '../components/Spinner';
+import ErrorMessage from '../components/ErrorMessage';
 import BlogService from '../services/BlogService';
 
 export default function Home() {
@@ -13,8 +14,7 @@ export default function Home() {
 	}
 
 	if (posts === 'error') {
-		return <h2 className="post__title">Error</h2>
-	
+		return <ErrorMessage />
 	}
 
 	const onClickBtn = () => {
@@ -25,7 +25,9 @@ export default function Home() {
 			updateMin(0);
 			updtaemax(9);
 		}
+
 		let start = document.documentElement.scrollHeight;
+		
 		const timer = setInterval(() => {
 			start -= 20;
 			if (start <= 0) {

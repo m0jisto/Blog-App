@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
 import Spinner from '../../components/Spinner';
+import ErrorMessage from '../../components/ErrorMessage';
 import BlogService from '../../services/BlogService';
 
 const PostWrapper = () => {
@@ -16,7 +17,7 @@ const PostWrapper = () => {
 	}
 
 	if (author === 'error' || post === 'error' || comments === 'error') {
-		return <h2 className="post__title">Error</h2>
+		return <ErrorMessage />
 	}
 
 	return (
